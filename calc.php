@@ -1,5 +1,6 @@
 <?php
 // $_GET = []； $_GET 的預設值
+print_r($_GET);
 if (!empty($_GET)) {
 
 

@@ -44,7 +44,14 @@
 
 <body>
   <div class="login-block">
-
+    <?php
+    if (isset($_GET['m'])) {
+      echo "<span style='color:red'>" . $_GET['m'] . "</span>";
+    }
+    if (isset($_GET['log']) && $_GET['log'] == 1) {
+      echo "歡迎你";
+    } else {
+    ?>
     <form action="verify.php" method='post'>
       <div class='login-input'>
         <label for="acc">帳號：</label>
@@ -61,6 +68,9 @@
       </div>
 
     </form>
+    <?php
+    }
+    ?>
   </div>
 </body>
 

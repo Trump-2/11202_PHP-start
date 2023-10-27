@@ -11,9 +11,11 @@
   <?php
   if ($_GET['log'] == 1) {
     echo "<h3>登入成功</h3>";
+
+    echo "<a href='login.php?log=1'>回登入頁</a>";
   } else {
     header("location:login.php");
-    echo "非法登入";
+    // echo "非法登入";
   }
 
   ?>
