@@ -1,5 +1,7 @@
 <?php
-// $_GET = []； $_GET 的預設值
+// $_GET 的預設值
+// $_GET = [];
+
 print_r($_GET);
 if (!empty($_GET)) {
 
@@ -8,7 +10,7 @@ if (!empty($_GET)) {
   $h = !empty($_GET['height']) ? $_GET['height'] : '沒有身高資料';
 
   $bmi = round($w / $h * $h, 2);
-  // echo "體重:$w";
+  // echo "體重:$w"; 
   // echo ", ";
   // echo "身高:$h";
   // echo ", ";

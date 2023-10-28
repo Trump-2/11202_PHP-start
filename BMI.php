@@ -16,22 +16,22 @@
     if (isset($_GET['m'])) {
       echo "<span style='color:red'>" . $_GET['m'] . "</span>";
     }
-  ?>
-  <form action="calc.php">
-    <div>
-      <label for="height">身高 (公分)</label>
-      <input type="text" name="height" id="height">
-    </div>
-    <div>
-      <label for="weight">體重 (公斤)</label>
-      <input type="password" name="weight" id="weight">
-    </div>
-    <div>
-      <input type="submit" value="計算BMI">
-      <input type="reset" value="重置">
-    </div>
-  </form>
-  <?php
+    ?>
+    <form action="calc.php">
+      <div>
+        <label for="height">身高 (公分)</label>
+        <input type="text" name="height" id="height">
+      </div>
+      <div>
+        <label for="weight">體重 (公斤)</label>
+        <input type="password" name="weight" id="weight">
+      </div>
+      <div>
+        <input type="submit" value="計算BMI">
+        <input type="reset" value="重置">
+      </div>
+    </form>
+    <?php
   } else {
     echo "體重:" . $_GET['w'] . "公斤";
     echo ", ";
