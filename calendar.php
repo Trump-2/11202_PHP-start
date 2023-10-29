@@ -23,13 +23,15 @@
 
 <body>
   <?php
-  if (isset($_GET['month']) && isset($_GET['year'])) {
-    $month = $_GET['month'];
-    $year = $_GET['year'];
-  } else {
-    $month = date('m');
-    $year = date('Y');
-  }
+if(isset($_GET['month']) && isset($_GET['year'])) {
+  $month = $_GET['month'];
+  $year = $_GET['year'];
+}else {
+  // 這裡的 else 是為了處理如果進到網頁中網址沒有 month 參數時發生錯誤訊息
+  $month = date("m");
+  $year = date('Y');
+
+}
 
   echo "<h3 style='text-align:center'>";
   echo date("西元{$year}年{$month}月");
@@ -51,24 +53,28 @@
   ?>
   <div style='width:264px;display:flex;margin:auto;justify-content:space-between'>
     <?php
-    $nextYear = $year;
-    $prevYear = $year;
-    if (($month + 1) > 12) {
-      $next = 1;
-      $nextYear = $year + 1;
-    } else {
-      $next = $month + 1;
-    }
+if($month  > 11 ) {
+  $next = 1;
+  $nextYear = $year + 1;
+}
+else {
+  $next = $month + 1;
+  $nextYear = $year;
 
-    if (($month - 1) < 1) {
-      $prev = 12;
-      $prevYear = $year - 1;
-    } else {
-      $prev = $month - 1;
-    }
-    ?>
-    <a href='?year=<?= $prevYear ?>?month=<?= $prev; ?>'>上一個月</a>
-    <a href='?year=<?= $nextYear ?>?month=<?= $next; ?>'>下一個月</a>
+}
+
+if ($month  < 2) {
+ $prev = 12;
+  $prevYear = $year - 1;
+}
+else {
+  $prev = $month - 1;
+  $prevYear = $year;
+}
+
+  ?>
+    <a href='?year=<?=$prevYear?>&month=<?=$prev?>'>上一個月</a>
+    <a href='?year=<?=$nextYear?>&month=<?=$next?>'>下一個月</a>
   </div>
   <table style='margin:auto'>
     <tr>
