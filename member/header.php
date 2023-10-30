@@ -2,7 +2,7 @@
 
   <a href="index1.php">回首頁</a>
   <?php
-  if ($_SESSION['login']) {
+  if (isset($_SESSION['login'])) {
   ?>
     <a href="member.php">會員中心</a>
     <a href="logout.php">登出</a>
