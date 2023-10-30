@@ -14,14 +14,16 @@
   ?>
 
   <?php
-  if (isset($_COOKIE['login']) && !empty([$_COOKIE['login']])) {
+  session_start();
+
+  if (isset($_SESSION['login']) && !empty([$_SESSION['login']])) {
     echo "<h3>登入成功</h3>";
 
     echo "<a href='login.php'>回登入頁</a>";
     echo "<a href=logout.php>登出</a>";
   } else {
-    setcookie('error', '沒有登入驗證，非法登入', time());
     header("location:login.php");
+    // echo "非法登入";
   }
 
   ?>
