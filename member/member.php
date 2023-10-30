@@ -1,3 +1,5 @@
+<?php include_once("session.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +16,6 @@
   ?>
 
   <?php
-  session_start();
 
   if (isset($_SESSION['login']) && !empty([$_SESSION['login']])) {
     echo "<h3>登入成功</h3>";
