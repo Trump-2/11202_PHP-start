@@ -9,10 +9,13 @@
 
 <body>
   <?php
-  if ($_GET['log'] == 1) {
+  // 告訴伺服器要使用 session 了
+  session_start();
+
+  if (isset($_SESSION['login']) && !empty([$_SESSION['login']])) {
     echo "<h3>登入成功</h3>";
 
-    echo "<a href='login.php?log=1'>回登入頁</a>";
+    echo "<a href='login.php'>回登入頁</a>";
   } else {
     header("location:login.php");
     // echo "非法登入";

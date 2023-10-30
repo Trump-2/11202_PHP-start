@@ -1,9 +1,12 @@
 <?php
-// $_POST 變數本身是陣列
-// print_r($_POST);
+
+// 告訴伺服器要使用 session 了
+session_start();
 
 if ($_POST['acc'] == 'admin' && $_POST['pw']  == '1234') {
-  header('location:member.php?log=1');
+  $_SESSION['login'] = $_POST['acc'];
+  header('location:member.php');
 } else {
-  header('location:login.php?m=帳號或密碼錯誤，請重新登入');
+  $_SESSION['error'] = '帳號或密碼錯誤，請重新登入';
+  header('location:login.php');
 }
