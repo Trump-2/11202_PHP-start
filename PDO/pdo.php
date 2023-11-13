@@ -17,7 +17,6 @@ $pdo = new PDO($dsn, 'root', '');
 // echo "<br>";
 
 // echo $rows[1]['parents'];
-
 $sql = "insert into `dept`(`code`, `name`) values('801','會計科')";
 
 $pdo->query($sql);
