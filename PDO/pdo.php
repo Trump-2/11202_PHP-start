@@ -17,6 +17,23 @@ $pdo = new PDO($dsn, 'root', '');
 // echo "<br>";
 
 // echo $rows[1]['parents'];
-$sql = "insert into `dept`(`code`, `name`) values('801','會計科')";
+// $sql = "insert into `dept`(`code`, `name`) values('801','會計科')";
 
-$pdo->query($sql);
+// $pdo->query($sql);
+
+// $sql = "update `dept` set `code` = '901', `name` = '演藝科' where `id` = 19";
+
+// $pdo->query($sql);
+
+// $sql = "delete from `dept` where `id` = 8";
+
+// $pdo->query($sql);
+
+// $sql = "insert into `classes`(`code`, `name`, `tutor`) values('111', 'Php復仇者班', '劉勤永')";
+
+// $pdo->query($sql);
+
+$sql = "delete from `dept` where `id` = 19";
+
+// exec() 用在不會有回傳值的 sql 指令上，會回傳一數字代表影響幾筆資料
+echo $pdo->exec($sql);
